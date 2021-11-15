@@ -1,5 +1,6 @@
 package com.example.mykampustest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
-
     private NavController navController;
 
     @Override
@@ -36,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                emailToStaff(view);
             }
         });
 
@@ -52,6 +51,16 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+    }
+
+    public void emailToStaff(View v) {
+        //send an email to kamtjatka staff
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"contact@kamtjatka.dk"});
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Info");
+        intent.putExtra(Intent.EXTRA_TEXT, "-- Sent by MyKampus App");
+        startActivity(intent);
     }
 
     @Override
