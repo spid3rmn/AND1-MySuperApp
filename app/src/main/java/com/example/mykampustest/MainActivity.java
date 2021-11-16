@@ -1,5 +1,6 @@
 package com.example.mykampustest;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
 
+import com.firebase.ui.auth.AuthUI;
 import com.google.android.material.navigation.NavigationView;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
@@ -34,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         //retrieving and initializing viewmodel
         viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
+        initialMessage();
+        //produces nullpointerexception
         //viewModel.init();
 
         //floating button
@@ -71,10 +75,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        //menu.findItem(R.id.action_signout).setVisible(true);
+
         getMenuInflater().inflate(R.menu.main, menu);
+        //setMenu(menu);
         return true;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -91,8 +99,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //my version with no message and toast
-    private void checkIfSignedIn() {
+    //Select right menu
+    /*private void setMenu(Menu menu) {
+        viewModel.getCurrentUser().observe(this, user -> {
+            if (user != null) {
+                getMenuInflater().inflate(R.menu.main_logout, menu);
+            } else {
+                getMenuInflater().inflate(R.menu.main, menu);
+            }
+        });
+    }*/
+
+    //Message to user regarding login status
+    private void initialMessage() {
         viewModel.getCurrentUser().observe(this, user -> {
             if (user != null) {
                 String message_log = "Welcome " + user.getDisplayName();
