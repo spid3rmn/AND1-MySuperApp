@@ -9,11 +9,7 @@
         android:id="@+id/nav_home"
         android:name="com.example.mykampustest.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_nav_home_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -32,10 +28,5 @@
         android:name="com.example.mykampustest.ui.office_hours.OfficeHoursFragment"
         android:label="@string/menu_office_hours"
         tools:layout="@layout/fragment_office_hours" />
-
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.example.mykampustest.ui.settings.SettingsFragment"
-        android:label="SettingsFragment" />
 
 </navigation>

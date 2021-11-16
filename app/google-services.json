@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "296332781938",
+    "project_id": "and1-app",
+    "storage_bucket": "and1-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296332781938:android:40c1bdb0178e01dcc4d5eb",
+        "android_client_info": {
+          "package_name": "com.example.mykampustest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296332781938-n5mpls384ct3jb9r1d7b8q43gfbnj4gv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxwBy1lY9HyJmghh2kmoWvgrZjdHQjU48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296332781938-n5mpls384ct3jb9r1d7b8q43gfbnj4gv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

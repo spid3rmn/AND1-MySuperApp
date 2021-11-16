@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void emailToStaff(View v) {
-        //send an email to kamtjatka staff
+        //send an email to staff
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"contact@kamtjatka.dk"});
@@ -73,17 +73,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_settings:
-                goToSettings();
+            case R.id.action_signin:
+                return true;
+            case R.id.action_faq:
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    private void goToSettings() {
-        Navigation.findNavController(this, R.id.nav_host_fragment_content_main)
-                .navigate(R.id.action_nav_home_to_settingsFragment);
     }
 
     @Override
