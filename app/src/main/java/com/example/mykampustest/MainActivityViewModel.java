@@ -18,10 +18,11 @@ public class MainActivityViewModel extends AndroidViewModel {
         //messageRepository = MessageRepository.getInstance();
     }
 
-    public void init() {
+    //only for message no need
+    /*public void init() {
         String userId = userRepository.getCurrentUser().getValue().getUid();
-        //messageRepository.init(userId);
-    }
+        messageRepository.init(userId);
+    }*/
 
     public LiveData<FirebaseUser> getCurrentUser(){
         return userRepository.getCurrentUser();

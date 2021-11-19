@@ -78,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
         //menu.findItem(R.id.action_signout).setVisible(true);
 
         getMenuInflater().inflate(R.menu.main, menu);
-        //setMenu(menu);
+        setButtonsMenu(menu);
+
         return true;
     }
 
@@ -93,22 +94,25 @@ public class MainActivity extends AppCompatActivity {
                 signOut();
                 return true;
             case R.id.action_faq:
+                //startFaqActivity();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
-    //Select right menu
-    /*private void setMenu(Menu menu) {
+    //Select right buttons for the menu
+    private void setButtonsMenu(Menu menu) {
         viewModel.getCurrentUser().observe(this, user -> {
             if (user != null) {
-                getMenuInflater().inflate(R.menu.main_logout, menu);
+                menu.findItem(R.id.action_signout).setVisible(true);
+                menu.findItem(R.id.action_signin).setVisible(false);
             } else {
-                getMenuInflater().inflate(R.menu.main, menu);
+                menu.findItem(R.id.action_signout).setVisible(false);
+                menu.findItem(R.id.action_signin).setVisible(true);
             }
         });
-    }*/
+    }
 
     //Message to user regarding login status
     private void initialMessage() {

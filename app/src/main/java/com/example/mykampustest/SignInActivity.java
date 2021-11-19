@@ -54,7 +54,7 @@ public class SignInActivity extends AppCompatActivity {
         Intent signInIntent = AuthUI.getInstance()
                 .createSignInIntentBuilder()
                 .setAvailableProviders(providers)
-                .setLogo(R.drawable.klogo)
+                .setLogo(R.drawable.kicon)
                 .build();
 
         activityResultLauncher.launch(signInIntent);
