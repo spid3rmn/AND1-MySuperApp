@@ -12,8 +12,8 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_guides">Guides</string>
-    <string name="menu_personal_information">Personal Information</string>
-    <string name="menu_office_hours">Office Hours</string>
+    <string name="menu_personal_information">Rooms</string>
+    <string name="menu_office_hours">Common Places</string>
 
     <!-- Preference Titles -->
     <string name="customization_header">Customization</string>
