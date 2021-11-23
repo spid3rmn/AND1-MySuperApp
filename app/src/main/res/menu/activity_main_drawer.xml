@@ -4,21 +4,25 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+        <!-- Home: Cloud Messaging -->
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_home"
             android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_personal_information"
-            android:title="@string/menu_personal_information" />
+        <!-- Guides: Cards with buttons -->
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_guides"
             android:title="@string/menu_guides" />
+        <!-- Common Rooms: Recycler View with photos -->
         <item
             android:id="@+id/nav_office_hours"
-            android:icon="@drawable/ic_menu_office_hours"
+            android:icon="@drawable/ic_baseline_group_24"
             android:title="@string/menu_office_hours" />
+        <!-- Rooms: Recycler View with photos -->
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_baseline_rooms"
+            android:title="@string/menu_personal_information" />
     </group>
 </menu>

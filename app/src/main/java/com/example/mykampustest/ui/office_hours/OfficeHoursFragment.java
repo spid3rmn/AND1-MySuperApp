@@ -21,15 +21,15 @@ import java.util.ArrayList;
 
 public class OfficeHoursFragment extends Fragment {
 
-    private OfficeHoursViewModel officeHoursViewModel;
+    //private OfficeHoursViewModel officeHoursViewModel;
     private FragmentOfficeHoursBinding binding;
     RecyclerView itemList;
     ItemAdapter itemAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        officeHoursViewModel =
-                new ViewModelProvider(this).get(OfficeHoursViewModel.class);
+        /*officeHoursViewModel =
+                new ViewModelProvider(this).get(OfficeHoursViewModel.class);*/
 
         binding = FragmentOfficeHoursBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -47,7 +47,11 @@ public class OfficeHoursFragment extends Fragment {
         itemList.setLayoutManager(new LinearLayoutManager(this.getContext()));
 
         ArrayList<Room> rooms = new ArrayList<>();
+        rooms.add(new Room("Office", R.drawable.gym));
         rooms.add(new Room("Gym", R.drawable.gym));
+        rooms.add(new Room("Common Room", R.drawable.gym));
+        rooms.add(new Room("Gaming Room", R.drawable.gym));
+        rooms.add(new Room("Laundry room", R.drawable.gym));
 
         itemAdapter = new ItemAdapter(rooms);
         itemList.setAdapter(itemAdapter);
