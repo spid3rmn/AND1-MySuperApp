@@ -12,47 +12,38 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.mykampustest.R;
+import com.example.mykampustest.databinding.FragmentFaqBinding;
+
 import com.example.mykampustest.databinding.FragmentOfficeHoursBinding;
-import com.example.mykampustest.ui.office_hours.ItemAdapter;
+import com.example.mykampustest.ui.faq.ItemAdapter;
 import com.example.mykampustest.ui.office_hours.Room;
 
 import java.util.ArrayList;
 
 public class FaqFragment extends Fragment {
-        //private OfficeHoursViewModel officeHoursViewModel;
-        private FragmentOfficeHoursBinding binding;
+        private FragmentFaqBinding binding;
         RecyclerView itemList;
         ItemAdapter itemAdapter;
 
         public View onCreateView(@NonNull LayoutInflater inflater,
                                  ViewGroup container, Bundle savedInstanceState) {
-        /*officeHoursViewModel =
-                new ViewModelProvider(this).get(OfficeHoursViewModel.class);*/
 
-            binding = FragmentOfficeHoursBinding.inflate(inflater, container, false);
+            binding = FragmentFaqBinding.inflate(inflater, container, false);
             View root = binding.getRoot();
 
-        /*final TextView textView = binding.textOfficeHours;
-        officeHoursViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });*/
-
-            /*itemList = binding.rv;
+            itemList = binding.rvFaq;
             itemList.hasFixedSize();
             itemList.setLayoutManager(new LinearLayoutManager(this.getContext()));
 
-            ArrayList<Room> rooms = new ArrayList<>();
-            rooms.add(new Room("Office", R.drawable.gym));
-            rooms.add(new Room("Gym", R.drawable.gym));
-            rooms.add(new Room("Common Room", R.drawable.gym));
-            rooms.add(new Room("Gaming Room", R.drawable.gym));
-            rooms.add(new Room("Laundry room", R.drawable.gym));
+            ArrayList<Faq> faqs = new ArrayList<>();
+            faqs.add(new Faq("Hey", "fuck"));
+            faqs.add(new Faq("Gym", "hh"));
+            faqs.add(new Faq("Common Room", "hfh"));
+            faqs.add(new Faq("Gaming Room", "hhf"));
+            faqs.add(new Faq("Laundry room", "hdh"));
 
-            itemAdapter = new ItemAdapter(rooms);
-            itemList.setAdapter(itemAdapter);*/
+            itemAdapter = new ItemAdapter(faqs);
+            itemList.setAdapter(itemAdapter);
 
             return root;
         }

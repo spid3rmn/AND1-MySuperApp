@@ -1,9 +1,8 @@
-package com.example.mykampustest.ui.office_hours;
+package com.example.mykampustest.ui.faq;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,34 +13,34 @@ import java.util.ArrayList;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
-    private ArrayList<Room> mRooms;
+    private ArrayList<Faq> faqs;
 
-    ItemAdapter(ArrayList<Room> rooms){
-        mRooms = rooms;
+    ItemAdapter(ArrayList<Faq> faqs){
+        this.faqs = faqs;
     }
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.card_place, parent, false);
+        View view = inflater.inflate(R.layout.card_faq, parent, false);
         return new ViewHolder(view);
     }
 
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
-        viewHolder.mainText.setText(mRooms.get(position).getMainText());
-        viewHolder.cardImage.setImageResource(mRooms.get(position).getIconId());
+        viewHolder.question.setText(faqs.get(position).getQuestion());
+        viewHolder.answer.setText(faqs.get(position).getAnswer());
     }
 
     public int getItemCount() {
-        return mRooms.size();
+        return faqs.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView cardImage;
-        TextView mainText;
+        TextView question;
+        TextView answer;
 
         ViewHolder(View itemView) {
             super(itemView);
-            cardImage = itemView.findViewById(R.id.imageCard);
-            mainText = itemView.findViewById(R.id.quest);
+            question = itemView.findViewById(R.id.quest);
+            answer = itemView.findViewById(R.id.answ);
         }
     }
 }

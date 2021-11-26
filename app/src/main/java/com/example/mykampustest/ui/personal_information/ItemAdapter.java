@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mykampustest.R;
-import com.example.mykampustest.ui.personal_information.Flat;
 
 import java.util.ArrayList;
 
@@ -42,7 +41,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         ViewHolder(View itemView) {
             super(itemView);
             cardImage = itemView.findViewById(R.id.imageCard);
-            mainText = itemView.findViewById(R.id.mainText);
+            mainText = itemView.findViewById(R.id.quest);
         }
     }
 }
