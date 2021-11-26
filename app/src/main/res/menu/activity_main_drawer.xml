@@ -11,18 +11,23 @@
             android:title="@string/menu_home" />
         <!-- Guides: Cards with buttons -->
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_guides"
             android:icon="@drawable/ic_menu_guides"
             android:title="@string/menu_guides" />
         <!-- Common Rooms: Recycler View with photos -->
         <item
-            android:id="@+id/nav_office_hours"
+            android:id="@+id/nav_common_rooms"
             android:icon="@drawable/ic_baseline_group_24"
-            android:title="@string/menu_office_hours" />
+            android:title="@string/menu_common_rooms" />
         <!-- Rooms: Recycler View with photos -->
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_flats"
             android:icon="@drawable/ic_baseline_rooms"
-            android:title="@string/menu_personal_information" />
+            android:title="@string/menu_flats" />
+        <!-- Faq: Recycler View dividers -->
+        <item
+            android:id="@+id/nav_faq"
+            android:icon="@drawable/ic_baseline_question_answer_24"
+            android:title="@string/menu_faq" />
     </group>
 </menu>

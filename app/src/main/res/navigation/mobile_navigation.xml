@@ -12,21 +12,27 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_guides"
         android:name="com.example.mykampustest.ui.gallery.GalleryFragment"
         android:label="@string/menu_guides"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_flats"
         android:name="com.example.mykampustest.ui.personal_information.SlideshowFragment"
-        android:label="@string/menu_personal_information"
+        android:label="@string/menu_flats"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
-        android:id="@+id/nav_office_hours"
+        android:id="@+id/nav_common_rooms"
         android:name="com.example.mykampustest.ui.office_hours.OfficeHoursFragment"
-        android:label="@string/menu_office_hours"
+        android:label="@string/menu_common_rooms"
         tools:layout="@layout/fragment_office_hours" />
+
+    <fragment
+        android:id="@+id/nav_faq"
+        android:name="com.example.mykampustest.ui.faq.FaqFragment"
+        android:label="@string/menu_faq"
+        tools:layout="@layout/fragment_faq" />
 
 </navigation>

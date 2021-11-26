@@ -2,6 +2,7 @@ package com.example.mykampustest;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_office_hours)
+                R.id.nav_home, R.id.nav_guides, R.id.nav_common_rooms, R.id.nav_flats, R.id.nav_faq)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -69,6 +70,13 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"contact@kamtjatka.dk"});
         intent.putExtra(Intent.EXTRA_SUBJECT, "Info");
         intent.putExtra(Intent.EXTRA_TEXT, "-- Sent by MyKampus App");
+        startActivity(intent);
+    }
+
+    public void goToWebsite() {
+        String action = Intent.ACTION_VIEW;
+        Uri uri = Uri.parse("https://kamtjatka.dk/");
+        Intent intent = new Intent(action, uri);
         startActivity(intent);
     }
 
@@ -93,8 +101,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_signout:
                 signOut();
                 return true;
-            case R.id.action_faq:
-                //startFaqActivity();
+            case R.id.action_web:
+                goToWebsite();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
