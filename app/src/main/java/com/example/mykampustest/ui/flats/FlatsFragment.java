@@ -1,4 +1,4 @@
-package com.example.mykampustest.ui.personal_information;
+package com.example.mykampustest.ui.flats;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,9 +9,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.mykampustest.databinding.FragmentSlideshowBinding;
+
 import java.util.ArrayList;
 
-public class SlideshowFragment extends Fragment {
+public class FlatsFragment extends Fragment {
     private FragmentSlideshowBinding binding;
     RecyclerView itemList;
     ItemAdapter itemAdapter;

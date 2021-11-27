@@ -1,4 +1,4 @@
-package com.example.mykampustest.ui.personal_information;
+package com.example.mykampustest.ui.flats;
 
 import android.content.Context;
 import android.content.Intent;

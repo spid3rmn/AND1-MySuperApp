@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/nav_flats"
-        android:name="com.example.mykampustest.ui.personal_information.SlideshowFragment"
+        android:name="com.example.mykampustest.ui.flats.FlatsFragment"
         android:label="@string/menu_flats"
         tools:layout="@layout/fragment_slideshow" />
 

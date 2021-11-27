@@ -1,4 +1,4 @@
-package com.example.mykampustest.ui.personal_information;
+package com.example.mykampustest.ui.flats;
 
 public class Flat {
     private static final String URL_BASE = "https://kamtjatka.dk/lejemaal/kategori-";

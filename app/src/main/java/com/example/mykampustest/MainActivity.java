@@ -8,8 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
-
-import com.firebase.ui.auth.AuthUI;
 import com.google.android.material.navigation.NavigationView;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
@@ -26,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
     private MainActivityViewModel viewModel;
-    //private NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +35,6 @@ public class MainActivity extends AppCompatActivity {
         //Retrieving and initializing ViewModel
         viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
         initialMessage();
-
-        //produces nullpointerexception
-        //viewModel.init();
 
         //Floating Button to send Mails
         setSupportActionBar(binding.appBarMain.toolbar);
