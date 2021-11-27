@@ -1,4 +1,4 @@
-package com.example.mykampustest.ui.office_hours;
+package com.example.mykampustest.ui.common_rooms;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,8 +26,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     }
 
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
-        viewHolder.mainText.setText(mRooms.get(position).getMainText());
         viewHolder.cardImage.setImageResource(mRooms.get(position).getIconId());
+        viewHolder.mainText.setText(mRooms.get(position).getMainText());
+        viewHolder.hoursText.setText(mRooms.get(position).getHoursText());
+        viewHolder.descText.setText(mRooms.get(position).getDescText());
     }
 
     public int getItemCount() {
@@ -37,11 +39,15 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageView cardImage;
         TextView mainText;
+        TextView descText;
+        TextView hoursText;
 
         ViewHolder(View itemView) {
             super(itemView);
             cardImage = itemView.findViewById(R.id.imageCard);
             mainText = itemView.findViewById(R.id.catId);
+            hoursText = itemView.findViewById(R.id.hoursId);
+            descText = itemView.findViewById(R.id.descId);
         }
     }
 }

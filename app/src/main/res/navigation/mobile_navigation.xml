@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/nav_common_rooms"
-        android:name="com.example.mykampustest.ui.office_hours.OfficeHoursFragment"
+        android:name="com.example.mykampustest.ui.common_rooms.CommonRoomsFragment"
         android:label="@string/menu_common_rooms"
         tools:layout="@layout/fragment_office_hours" />
 
