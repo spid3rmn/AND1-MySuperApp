@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
     private MainActivityViewModel viewModel;
+    private static final String CONTACT_MAIL = "contact@kamtjatka.dk";
+    private static final String WEBSITE = "https://kamtjatka.dk/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     public void emailToStaff(View v) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"contact@kamtjatka.dk"});
+        intent.putExtra(Intent.EXTRA_EMAIL, CONTACT_MAIL);
         intent.putExtra(Intent.EXTRA_SUBJECT, "Info");
         intent.putExtra(Intent.EXTRA_TEXT, "-- Sent by MyKampus App");
         startActivity(intent);
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     //Implicit Intent VIEW
     public void goToWebsite() {
         String action = Intent.ACTION_VIEW;
-        Uri uri = Uri.parse("https://kamtjatka.dk/");
+        Uri uri = Uri.parse(WEBSITE);
         Intent intent = new Intent(action, uri);
         startActivity(intent);
     }
