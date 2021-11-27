@@ -39,7 +39,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
         ViewHolder(View itemView) {
             super(itemView);
-            question = itemView.findViewById(R.id.quest);
+            question = itemView.findViewById(R.id.catId);
             answer = itemView.findViewById(R.id.answ);
         }
     }

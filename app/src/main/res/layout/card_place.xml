@@ -31,7 +31,7 @@
 
                 <!-- Title, secondary and supporting text -->
                 <TextView
-                    android:id="@+id/quest"
+                    android:id="@+id/catId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Example test 1"

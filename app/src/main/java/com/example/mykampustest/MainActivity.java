@@ -35,36 +35,33 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        //retrieving and initializing viewmodel
+        //Retrieving and initializing ViewModel
         viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
         initialMessage();
+
         //produces nullpointerexception
         //viewModel.init();
 
-        //floating button
+        //Floating Button to send Mails
         setSupportActionBar(binding.appBarMain.toolbar);
-        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                emailToStaff(view);
-            }
-        });
+        binding.appBarMain.fab.setOnClickListener(this::emailToStaff);
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
+        // Passing each menu ID as a set of Ids because each menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_guides, R.id.nav_common_rooms, R.id.nav_flats, R.id.nav_faq)
                 .setOpenableLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
+    //Implicit Intend SEND
     public void emailToStaff(View v) {
-        //send an email to staff
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"contact@kamtjatka.dk"});
@@ -73,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //Implicit Intent VIEW
     public void goToWebsite() {
         String action = Intent.ACTION_VIEW;
         Uri uri = Uri.parse("https://kamtjatka.dk/");
@@ -82,10 +80,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //menu.findItem(R.id.action_signout).setVisible(true);
-
+        //Inflate the menu; this adds items to the action bar if it is present
         getMenuInflater().inflate(R.menu.main, menu);
+
+        //Select which buttons will be visible for login
         setButtonsMenu(menu);
 
         return true;
@@ -135,16 +133,17 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //Login methods
     private void startLoginActivity() {
         startActivity(new Intent(this, SignInActivity.class));
         finish();
     }
 
-    //view in the arguments?
     public void signOut() {
         viewModel.signOut();
     }
 
+    //Navigation
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);

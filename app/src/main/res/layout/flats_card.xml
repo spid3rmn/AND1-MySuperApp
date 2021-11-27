@@ -7,21 +7,12 @@
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+        android:layout_margin="8dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <!-- Media -->
-            <ImageView
-                android:id="@+id/imageCard"
-                android:layout_width="match_parent"
-                android:layout_height="194dp"
-                android:contentDescription="Example Description"
-                android:scaleType="centerCrop"
-                android:src="@drawable/klogo" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -31,25 +22,27 @@
 
                 <!-- Title, secondary and supporting text -->
                 <TextView
-                    android:id="@+id/quest"
+                    android:id="@+id/catId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Example test 1"
+                    android:text="Category ???"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
                 <TextView
+                    android:id="@+id/descId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Example test 2"
+                    android:text="Description ..."
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary" />
 
                 <TextView
+                    android:id="@+id/rentId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Example test 3"
+                    android:text="Rent: ???"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary" />
 
@@ -63,17 +56,14 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/bookButtId"
                     style="?attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
-                    android:text="Example action 1" />
+                    android:onClick="onButtonClick"
+                    android:text="Book here your room" />
 
-                <com.google.android.material.button.MaterialButton
-                    style="?attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Example action 2" />
             </LinearLayout>
 
         </LinearLayout>
