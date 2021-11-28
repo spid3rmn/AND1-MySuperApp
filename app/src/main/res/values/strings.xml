@@ -9,7 +9,7 @@
     <string name="action_web">Website</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_guides">Guides</string>
+    <string name="menu_gallery">Gallery</string>
     <string name="menu_flats">Flats</string>
     <string name="menu_common_rooms">Common Rooms</string>
     <string name="menu_faq">Faq</string>
@@ -23,7 +23,7 @@
     <string name="default_notification_channel_name" translatable="true">Weather</string>
     <!-- [END fcm_default_icon_string] -->
     <string name="msg_subscribe_failed">Failed to subscribe to weather topic</string>
-    <string name="fcm_message">FCM Message</string>
+    <string name="fcm_message">New Message</string>
 
     <string name="quickstart_message">Click the SUBSCRIBE TO WEATHER button below to subscribe to the
         weather topic. Messages sent to the weather topic will be received. The LOG TOKEN button logs the
