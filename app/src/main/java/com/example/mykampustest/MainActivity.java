@@ -136,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 signOut();
                 return true;
             case R.id.action_upload:
+                //TODO Logic for Uploading
                 return true;
             case R.id.action_web:
                 goToWebsite();
