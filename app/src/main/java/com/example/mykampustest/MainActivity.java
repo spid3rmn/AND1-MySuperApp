@@ -135,6 +135,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_signout:
                 signOut();
                 return true;
+            case R.id.action_upload:
+                return true;
             case R.id.action_web:
                 goToWebsite();
                 return true;

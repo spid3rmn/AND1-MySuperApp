@@ -6,6 +6,7 @@
 
     <string name="action_signin">Sign in</string>
     <string name="action_signout">Sign out</string>
+    <string name="action_upload">Upload</string>
     <string name="action_web">Website</string>
 
     <string name="menu_home">Home</string>
