@@ -9,10 +9,15 @@
         android:id="@+id/nav_home"
         android:name="com.example.mykampustest.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_single_guide"
+            app:destination="@id/nav_single_guide"
+            app:enterAnim="@android:anim/slide_in_left" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_guides"
+        android:id="@+id/nav_gallery"
         android:name="com.example.mykampustest.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
@@ -34,5 +39,11 @@
         android:name="com.example.mykampustest.ui.faq.FaqFragment"
         android:label="@string/menu_faq"
         tools:layout="@layout/fragment_faq" />
+
+    <fragment
+        android:id="@+id/nav_single_guide"
+        android:name="com.example.mykampustest.ui.home.SingleGuideFragment"
+        android:label="Guide"
+        tools:layout="@layout/fragment_single_guide" />
 
 </navigation>

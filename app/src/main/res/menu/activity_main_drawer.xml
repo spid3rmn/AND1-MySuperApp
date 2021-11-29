@@ -16,7 +16,7 @@
             android:title="@string/menu_common_rooms" />
         <!-- Guides: Cards with buttons -->
         <item
-            android:id="@+id/nav_guides"
+            android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_baseline_photo_library_24"
             android:title="@string/menu_gallery" />
         <!-- Rooms: Recycler View with photos -->
