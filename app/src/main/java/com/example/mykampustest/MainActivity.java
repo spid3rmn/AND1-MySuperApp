@@ -12,9 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
@@ -33,7 +30,11 @@ public class MainActivity extends AppCompatActivity {
     private MainActivityViewModel viewModel;
     private static final String CONTACT_MAIL = "contact@kamtjatka.dk";
     private static final String WEBSITE = "https://kamtjatka.dk/";
+    private static final String FACEBOOK = "https://www.facebook.com/kamtjatkahorsens";
     private static final String TAG = "MainActivity";
+    private static final String SUBJECT = "MyKampus App Communication";
+    private static final String MESSAGE = "-- Sent by ";
+    private static final String NO_USER = "non authenticated user";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,10 +64,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        //FirebaseMessaging.getInstance().setAutoInitEnabled(true);
-        //Cloud Messaging
+        //Cloud Messaging: create channel to show notifications
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            // Create channel to show notifications.
             String channelId  = getString(R.string.default_notification_channel_id);
             String channelName = getString(R.string.default_notification_channel_name);
             NotificationManager notificationManager =
@@ -75,34 +74,37 @@ public class MainActivity extends AppCompatActivity {
                     channelName, NotificationManager.IMPORTANCE_LOW));
         }
 
+        //Cloud Messaging: retrieve token for individual messaging
         FirebaseMessaging.getInstance().getToken()
-                .addOnCompleteListener(new OnCompleteListener<String>() {
-                    @Override
-                    public void onComplete(@NonNull Task<String> task) {
-                        if (!task.isSuccessful()) {
-                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
-                            return;
-                        }
-
-                        // Get new FCM registration token
-                        String token = task.getResult();
-
-                        // Log and toast
-                        String msg = getString(R.string.msg_token_fmt, token);
-                        Log.d(TAG, msg);
-                        //Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                        return;
                     }
+                    String token = task.getResult();
+                    String msg = getString(R.string.msg_token_fmt, token);
+                    Log.d(TAG, msg);
                 });
-        // [END log_reg_token]
     }
 
     //Implicit Intend SEND
     public void emailToStaff(View v) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_SUBJECT, SUBJECT);
         intent.putExtra(Intent.EXTRA_EMAIL, CONTACT_MAIL);
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Info");
-        intent.putExtra(Intent.EXTRA_TEXT, "-- Sent by MyKampus App");
+
+        //Adding name of the sender if logged in
+        viewModel.getCurrentUser().observe(this, user -> {
+            if (user != null) {
+                String message = MESSAGE + user.getDisplayName();
+                intent.putExtra(Intent.EXTRA_TEXT, message);
+            } else {
+                String message = MESSAGE + NO_USER;
+                intent.putExtra(Intent.EXTRA_TEXT, message);
+            }
+        });
+
         startActivity(intent);
     }
 
@@ -110,6 +112,14 @@ public class MainActivity extends AppCompatActivity {
     public void goToWebsite() {
         String action = Intent.ACTION_VIEW;
         Uri uri = Uri.parse(WEBSITE);
+        Intent intent = new Intent(action, uri);
+        startActivity(intent);
+    }
+
+    //Implicit Intent VIEW
+    public void goToFacebook() {
+        String action = Intent.ACTION_VIEW;
+        Uri uri = Uri.parse(FACEBOOK);
         Intent intent = new Intent(action, uri);
         startActivity(intent);
     }
@@ -136,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 signOut();
                 return true;
             case R.id.action_upload:
-                //TODO Logic for Uploading
+                goToFacebook();
                 return true;
             case R.id.action_web:
                 goToWebsite();

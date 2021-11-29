@@ -1,7 +1,6 @@
 package com.example.mykampustest.data;
 
 import androidx.lifecycle.LiveData;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
