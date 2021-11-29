@@ -25,4 +25,12 @@ public class MyWorker extends Worker {
         // TODO(developer): add long running task here.
         return Result.success();
     }
+}
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
 }*/

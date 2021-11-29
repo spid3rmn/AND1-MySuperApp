@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        FirebaseMessaging.getInstance().setAutoInitEnabled(true);
+        //FirebaseMessaging.getInstance().setAutoInitEnabled(true);
         //Cloud Messaging
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             // Create channel to show notifications.
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                         // Log and toast
                         String msg = getString(R.string.msg_token_fmt, token);
                         Log.d(TAG, msg);
-                        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                     }
                 });
         // [END log_reg_token]
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //Select right buttons for the menu
+    //Select buttons for the menu
     private void setButtonsMenu(Menu menu) {
         viewModel.getCurrentUser().observe(this, user -> {
             if (user != null) {
@@ -172,12 +172,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //Login methods
+    //Login method
     private void startLoginActivity() {
         startActivity(new Intent(this, SignInActivity.class));
         finish();
     }
 
+    //Logout method
     public void signOut() {
         viewModel.signOut();
     }

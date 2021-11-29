@@ -2,11 +2,13 @@ package com.example.mykampustest;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 import java.util.Arrays;
@@ -32,6 +34,20 @@ public class SignInActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this).get(SignInViewModel.class);
         checkIfSignedIn();
         setContentView(R.layout.activity_sign_in);
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                goToMainActivity();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void checkIfSignedIn() {

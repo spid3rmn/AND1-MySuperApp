@@ -36,8 +36,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
         viewHolder.view.setOnClickListener((View view) -> {
             Bundle args = new Bundle();
+
             args.putString("Title", mGuides.get(position).getName());
-            args.putString("Text", mGuides.get(position).getSmallDesc());
+            args.putString("Guide", mGuides.get(position).getGuide());
+
             Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_single_guide, args);
         });
     }
@@ -48,53 +50,17 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     class ViewHolder extends RecyclerView.ViewHolder {
         View view;
-        ImageView cardImage;
+
         TextView mainText;
         TextView descText;
+        ImageView cardImage;
 
         ViewHolder(View itemView) {
             super(itemView);
-            this.view = itemView; //oppure view?
+            this.view = itemView;
             cardImage = itemView.findViewById(R.id.imageCard);
             mainText = itemView.findViewById(R.id.catId);
-            descText = itemView.findViewById(R.id.descId);
+            descText = itemView.findViewById(R.id.smallDescId);
         }
     }
 }
-
-/*public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
-    Consumer<Integer> onClickCb;
-
-    ItemAdapter(List<String> all, Consumer<Integer> cb) {
-        onClickCb = cb;
-    }
-
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.view.setOnClickListener((View view) -> {
-            onClickCb.accept(position);
-        });
-    }
-
-    @Override
-    public int getItemCount() {
-        return 0;
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        View view;
-
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            this.view = view;
-        }
-
-
-    }
-}*/

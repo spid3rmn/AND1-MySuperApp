@@ -46,7 +46,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             super(itemView);
             cardImage = itemView.findViewById(R.id.imageCard);
             mainText = itemView.findViewById(R.id.catId);
-            hoursText = itemView.findViewById(R.id.hoursId);
+            hoursText = itemView.findViewById(R.id.smallDescId);
             descText = itemView.findViewById(R.id.descId);
         }
     }

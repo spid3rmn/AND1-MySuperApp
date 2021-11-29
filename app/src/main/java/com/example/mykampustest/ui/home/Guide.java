@@ -4,11 +4,12 @@ public class Guide {
     private int iconId;
     private String name;
     private String smallDesc;
-    //private String guide;
+    private String guide;
 
-    public Guide(String name, String smallDesc, int iconId) {
+    public Guide(String name, String smallDesc, String guide, int iconId) {
         this.name = name;
         this.smallDesc = smallDesc;
+        this.guide = guide;
         this.iconId = iconId;
     }
 
@@ -24,7 +25,7 @@ public class Guide {
         return iconId;
     }
 
-    /*public String getGuide() {
+    public String getGuide() {
         return guide;
-    }*/
+    }
 }
