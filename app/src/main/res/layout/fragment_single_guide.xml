@@ -8,26 +8,39 @@
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <TextView
-            android:id="@+id/titleId"
-            android:layout_width="wrap_content"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="titleId"
-            android:layout_weight="2"
-            android:textColor="@color/main_color"
-            android:textSize="30sp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_margin="15dp"/>
+            android:layout_margin="8dp">
 
-        <TextView
-            android:id="@+id/textId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:text="titleId"
-            android:textSize="20sp"
-            android:layout_margin="15dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/titleId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Example test 1"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/textId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Example test 2"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 
