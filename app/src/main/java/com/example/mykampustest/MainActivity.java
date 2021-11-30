@@ -96,13 +96,13 @@ public class MainActivity extends AppCompatActivity {
 
         //Adding name of the sender if logged in
         viewModel.getCurrentUser().observe(this, user -> {
+            String message;
             if (user != null) {
-                String message = MESSAGE + user.getDisplayName();
-                intent.putExtra(Intent.EXTRA_TEXT, message);
+                message = MESSAGE + user.getDisplayName();
             } else {
-                String message = MESSAGE + NO_USER;
-                intent.putExtra(Intent.EXTRA_TEXT, message);
+                message = MESSAGE + NO_USER;
             }
+            intent.putExtra(Intent.EXTRA_TEXT, message);
         });
 
         startActivity(intent);

@@ -13,7 +13,7 @@
         <action
             android:id="@+id/action_nav_home_to_nav_single_guide"
             app:destination="@id/nav_single_guide"
-            app:enterAnim="@android:anim/slide_in_left" />
+            app:enterAnim="@anim/fui_slide_in_right" />
     </fragment>
 
     <fragment

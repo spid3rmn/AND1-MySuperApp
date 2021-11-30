@@ -13,6 +13,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.mykampustest.R;
+import com.facebook.drawee.view.SimpleDraweeView;
+
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
@@ -30,9 +32,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     }
 
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
-        viewHolder.cardImage.setImageResource(mGuides.get(position).getIconId());
         viewHolder.mainText.setText(mGuides.get(position).getName());
         viewHolder.descText.setText(mGuides.get(position).getSmallDesc());
+
+        viewHolder.cardImage.setActualImageResource(mGuides.get(position).getIconId());
 
         viewHolder.view.setOnClickListener((View view) -> {
             Bundle args = new Bundle();
@@ -53,7 +56,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
         TextView mainText;
         TextView descText;
-        ImageView cardImage;
+        SimpleDraweeView cardImage;
 
         ViewHolder(View itemView) {
             super(itemView);
