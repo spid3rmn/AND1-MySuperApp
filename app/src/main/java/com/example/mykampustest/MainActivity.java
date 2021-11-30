@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Passing each menu ID as a set of Ids because each menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_common_rooms, R.id.nav_flats, R.id.nav_faq)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_common_rooms, R.id.nav_flats, R.id.nav_feedbacks, R.id.nav_faq)
                 .setOpenableLayout(drawer)
                 .build();
 
@@ -91,8 +91,8 @@ public class MainActivity extends AppCompatActivity {
     public void emailToStaff(View v) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_SUBJECT, SUBJECT);
         intent.putExtra(Intent.EXTRA_EMAIL, CONTACT_MAIL);
+        intent.putExtra(Intent.EXTRA_SUBJECT, SUBJECT);
 
         //Adding name of the sender if logged in
         viewModel.getCurrentUser().observe(this, user -> {

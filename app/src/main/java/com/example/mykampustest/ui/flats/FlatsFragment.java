@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.mykampustest.databinding.FragmentSlideshowBinding;
-
 import java.util.ArrayList;
 
 public class FlatsFragment extends Fragment {
@@ -75,10 +74,6 @@ public class FlatsFragment extends Fragment {
                         "Deposit: 9.000 DKK", "f/"));
 
         return flats;
-    }
-
-    public void onButtonClick(View v) {
-
     }
 
     @Override

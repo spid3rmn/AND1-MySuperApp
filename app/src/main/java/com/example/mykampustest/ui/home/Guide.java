@@ -4,9 +4,9 @@ public class Guide {
     private int iconId;
     private String name;
     private String smallDesc;
-    private String guide;
+    private int guide;
 
-    public Guide(String name, String smallDesc, String guide, int iconId) {
+    public Guide(String name, String smallDesc, int guide, int iconId) {
         this.name = name;
         this.smallDesc = smallDesc;
         this.guide = guide;
@@ -25,7 +25,7 @@ public class Guide {
         return iconId;
     }
 
-    public String getGuide() {
+    public int getGuide() {
         return guide;
     }
 }

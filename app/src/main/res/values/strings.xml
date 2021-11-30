@@ -20,17 +20,76 @@
     <string name="menu_faq">Faq</string>
 
     <!-- Notifications strings -->
-    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
-    <string name="default_notification_channel_name" translatable="true">Kamtjatka Notifications</string>
-
+    <string name="default_notification_channel_id">fcm_default_channel</string>
+    <string name="default_notification_channel_name">Kamtjatka Notifications</string>
     <string name="msg_subscribe_failed">Failed to subscribe to channel</string>
     <string name="fcm_message">New Message</string>
-    <string name="quickstart_message">Click the SUBSCRIBE TO WEATHER button below to subscribe to the
-        weather topic. Messages sent to the weather topic will be received. The LOG TOKEN button logs the
-        FCM registration token to logcat.</string>
-    <string name="subscribe_to_weather">Subscribe To Weather</string>
+    <string name="quickstart_message">You are subscribed to Kamtjatka notifications</string>
     <string name="log_token">Log Token</string>
     <string name="msg_subscribed">Subscribed to weather topic</string>
-    <string name="msg_token_fmt" translatable="false">FCM registration Token: %s</string>
+    <string name="msg_token_fmt">FCM registration Token: %s</string>
+    <string name="menu_feedbacks">Feedbacks</string>
+
+    <!-- Guides strings -->
+    <string name="welcome">Do you have any questions about the Danish way of life? Would you like to know more
+places to socialize in Horsens? Or do you want to make a career for yourself at one of the
+many interesting companies in the Horsens area? Our welcome guide is your helping hand
+when settling in Horsens. Please contact BusinessHorsens to learn more.
+BusinessHorsens can also arrange for you to talk to one of our welcome ambassadors –
+a group of knowledgeable and friendly volunteer international citizens who are eager to
+answer any practical questions you might have about settling and living in Horsens.
+BusinessHorsens
+Vitus Bering Innovation Park
+Chr. M. Østergaards Vej 4a
+DK-8700 Horsens
+Phone: +45 7561 1888
+E-mail: mail@businesshorsens.dk
+Opening hours: Monday - Thursday: 8.00 am - 3.00 pm and Friday 8.00 am - 2.00 pm</string>
+
+    <string name="arriving">To make sure that you have all the right papers and registrations you need in order to be able
+to work and live in Denmark, we have collected some information for you about the official
+matters to take care of when moving to Denmark.
+International Citizen Service – all the services you need in one place
+The International Citizen Service (ICS) makes dealing with Danish authorities as easy as pos-
+sible – for you, your partner, and for Danish companies that employ foreign workers.
+You will find an International Citizen Service office in each of the four largest cities in Den-
+mark: Copenhagen, Aarhus, Odense and Aalborg. The Municipality of Horsens works with ICS
+Aarhus to ensure that you get off to a good start in Denmark and Horsens.
+All the public authorities you typically need to deal with are represented at ICS Aarhus. In most
+cases, you will only need to talk to your ICS office to take care of your paperwork and find
+answers to your questions.</string>
+
+    <string name="cleaning">It is always the responsibility of the tenants to keep the apartment clean and tidy.For health reasons, but
+also to prevent damage to the buildings, apartments should be cleaned on a weekly basis. Bathrooms and
+kitchen twice a week
+No garbage bags on the floors, throw them out or have them in bins.
+Clean up after you when you have been using the common rooms.</string>
+
+    <string name="room_inspection">During the first 5 days after your tenancy begins, we will be conducting an inspection of your room.
+You will receive an invitation, but you are not required to be present.
+After the inspection you will receive an inspection report about the state of your room. If you do
+not agree with the inspection, or if you encounter defects not mentioned, you must notify us in
+writing within 2 weeks after the tenancy beginning date. Report to contract@kamtjatka.dk
+Also please count the inventory on the inventory list you have received, and return the list 2 weeks
+after the tenancy beginning date. This way you will not be held liable for damages or shortcomings.</string>
+
+    <string name="maintenance">For safety and documentation purposes, email must be used for maintenance requests. Send a
+detailed description of the problem to contract@kamtjatka.dk
+We will tent to problems as fast as possible. For issues in common areas we will gain access to the
+apartment and leave a note. If maintenance is required in your private room, you must be home or
+give explicit consent to our staff entering the room without you present. </string>
+
+    <string name="keys">Broken keys can be replaced at the office. You will be charged for the replacement key, currently
+dkk 250,00. If the key is broken inside the lock, a locksmith will be called and you will be charged
+the related cost.
+If you lose a key, we will need to recode the locks. You will be charged the related cost, currently
+dkk 1.850,00.
+For calls outside of normal working hours regarding lost or broken keys, you will be charged a
+service fee of dkk 400,00.</string>
+
+    <string name="check_out">When your contract is coming to an end, you will receive information from us on email regarding
+the checkout.
+When planning your trip back home please note that checkout is only done on weekdays and only
+in normal business hours. Please schedule travel accordingly. </string>
 
 </resources>

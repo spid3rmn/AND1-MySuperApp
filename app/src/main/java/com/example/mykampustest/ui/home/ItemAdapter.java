@@ -38,7 +38,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             Bundle args = new Bundle();
 
             args.putString("Title", mGuides.get(position).getName());
-            args.putString("Guide", mGuides.get(position).getGuide());
+            args.putInt("Guide", mGuides.get(position).getGuide());
 
             Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_single_guide, args);
         });

@@ -30,7 +30,7 @@ public class SingleGuideFragment extends Fragment {
 
         //Retrieving data from Bundle
         tvTitle.setText(getArguments().getString("Title"));
-        tvText.setText(getArguments().getString("Guide"));
+        tvText.setText(getString(getArguments().getInt("Guide")));
 
         return root;
     }

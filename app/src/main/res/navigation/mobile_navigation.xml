@@ -46,4 +46,10 @@
         android:label="Guide"
         tools:layout="@layout/fragment_single_guide" />
 
+    <fragment
+        android:id="@+id/nav_feedbacks"
+        android:name="com.example.mykampustest.ui.feedbacks.FeedbacksFragment"
+        android:label="Feedbacks"
+        tools:layout="@layout/fragment_feedbacks" />
+
 </navigation>
