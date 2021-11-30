@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mykampustest.R;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.ArrayList;
 
@@ -26,7 +27,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     }
 
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
-        viewHolder.cardImage.setImageResource(mRooms.get(position).getIconId());
+        viewHolder.cardImage.setActualImageResource(mRooms.get(position).getIconId());
         viewHolder.mainText.setText(mRooms.get(position).getMainText());
         viewHolder.hoursText.setText(mRooms.get(position).getHoursText());
         viewHolder.descText.setText(mRooms.get(position).getDescText());
@@ -37,7 +38,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView cardImage;
+        SimpleDraweeView cardImage;
         TextView mainText;
         TextView descText;
         TextView hoursText;
