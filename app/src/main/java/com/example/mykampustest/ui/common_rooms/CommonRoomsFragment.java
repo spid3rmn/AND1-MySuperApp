@@ -38,10 +38,10 @@ public class CommonRoomsFragment extends Fragment {
     private ArrayList<Room> populateRooms() {
         ArrayList<Room> rooms = new ArrayList<>();
 
-        rooms.add(new Room("Office", "Monday / Wednesday / Friday 10am - 2 pm", "Where you can pay rent, request information and fill papers", R.drawable.office_p));
-        rooms.add(new Room("Common Room", "Sunday – Thursday 12pm – 6am", "The perfect place to enjoy campus life", R.drawable.common_p));
-        rooms.add(new Room("Gym", "Always open", "All the items you need to get fit", R.drawable.gym_p));
-        rooms.add(new Room("Gaming Room", "Sunday – Thursday 12pm – 6am", "The room to have fun", R.drawable.gaming_p));
+        rooms.add(new Room("Office", "Monday and Wednesday 13:30-15:30 Friday 7:30-8:30", "Where you can pay rent, request information, fill papers and ask all your questions", R.drawable.office_p));
+        rooms.add(new Room("Common Room", "Sunday – Thursday 12pm – 6am", "The perfect place to enjoy campus life: board games, music and international dinners", R.drawable.common_p));
+        rooms.add(new Room("Gym", "Always open", "All you need to get fit", R.drawable.gym_p));
+        rooms.add(new Room("Gaming Room", "Sunday – Thursday 12pm – 6am", "The room to have fun. You can watch netflix or disney+, listen to spotify, play to PS4, table soccer and ping pong", R.drawable.gaming_p));
         rooms.add(new Room("Laundry room", "Always open", "Washing machines and dryers", R.drawable.laundry_p));
 
         return rooms;
