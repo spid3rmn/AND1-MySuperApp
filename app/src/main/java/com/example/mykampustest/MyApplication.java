@@ -5,7 +5,7 @@ import android.app.Application;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.appcheck.FirebaseAppCheck;
-import com.google.firebase.appcheck.safetynet.SafetyNetAppCheckProviderFactory;
+import com.google.firebase.appcheck.debug.DebugAppCheckProviderFactory;
 
 public class MyApplication extends Application {
     @Override
@@ -14,9 +14,9 @@ public class MyApplication extends Application {
 
         Fresco.initialize(this);
 
-        FirebaseApp.initializeApp(/*context=*/ this);
+        FirebaseApp.initializeApp(this);
         FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
         firebaseAppCheck.installAppCheckProviderFactory(
-                SafetyNetAppCheckProviderFactory.getInstance());
+                DebugAppCheckProviderFactory.getInstance());
     }
 }
