@@ -1,13 +1,15 @@
 package com.example.mykampustest.ui.gallery;
 
-public class Model {
-    private String image;
+import android.net.Uri;
 
-    Model(String image) {
+public class Model {
+    private Uri image;
+
+    Model(Uri image) {
         this.image = image;
     }
 
-    public String getImage() {
+    public Uri getImage() {
         return image;
     }
 }
