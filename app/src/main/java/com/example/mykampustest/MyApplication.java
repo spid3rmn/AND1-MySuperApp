@@ -14,9 +14,10 @@ public class MyApplication extends Application {
 
         Fresco.initialize(this);
 
-        FirebaseApp.initializeApp(this);
+        //Debug token with App Check
+        /*FirebaseApp.initializeApp(this);
         FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
         firebaseAppCheck.installAppCheckProviderFactory(
-                DebugAppCheckProviderFactory.getInstance());
+                DebugAppCheckProviderFactory.getInstance());*/
     }
 }

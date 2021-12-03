@@ -26,43 +26,17 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        // [START_EXCLUDE]
-        // There are two types of messages data messages and notification messages. Data messages
-        // are handled
-        // here in onMessageReceived whether the app is in the foreground or background. Data
-        // messages are the type
-        // traditionally used with GCM.
-        // Notification messages are only received here in
-        // onMessageReceived when the app
-        // is in the foreground. When the app is in the background an automatically generated
-        // notification is displayed.
-        // When the user taps on the notification they are returned to the app. Messages
-        // containing both notification
-        // and data payloads are treated as notification messages. The Firebase console always
-        // sends notification
-        // messages. For more see: https://firebase.google.com/docs/cloud-messaging/concept-options
-        // [END_EXCLUDE]
 
-        // TODO(developer): Handle FCM messages here.
-        // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
-        Log.d(TAG, "From: " + remoteMessage.getFrom());
+//Here is possible to handle also data messages but a server is needed. Since time is running and server scripting
+//is not the focus of this course I will leave this behind. What I wanted to do is a fragment with a recycler view
+//with all messages divided per days (like gmail). If I have time I will do it afterward.
 
-        // Check if message contains a notification payload.
+        // Check if message is a notification
         if (remoteMessage.getNotification() != null) {
             Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
             sendNotification(remoteMessage.getNotification().getBody());
         }
     }
-
-    /*@Override
-    public void onNewToken(String token) {
-        Log.d(TAG, "Refreshed token: " + token);
-        //sendRegistrationToServer(token);
-    }
-
-    private void sendRegistrationToServer(String token) {
-        //To implement only for targeting users
-    }*/
 
     //Create notification from FCM message
     private void sendNotification(String messageBody) {

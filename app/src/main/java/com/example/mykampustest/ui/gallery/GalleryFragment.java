@@ -43,12 +43,14 @@ public class GalleryFragment extends Fragment {
         binding = FragmentGalleryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        //Firebase Storage
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference();
+//This is the right way to do it: the references are dynamical so the gallery of photos is in sync
+//with firebase cloud storage. Here the urls are hardcoded because for some reasons the code following is not working.
+//After sticking with this problem for some time I decided to hardcode and move on just because of time schedule.
+
+        /*StorageReference storageReference = FirebaseStorage.getInstance().getReference();
         StorageReference listRef = storageReference.child("images");
 
-        //This should work but it doesn't
-        /*listRef.listAll()
+        listRef.listAll()
                 .addOnSuccessListener(listResult -> {
                     for (StorageReference prefix : listResult.getPrefixes()) {
                         // All the prefixes under listRef.
@@ -66,20 +68,6 @@ public class GalleryFragment extends Fragment {
                     }));
                 })
                 .addOnFailureListener(err -> Log.e(TAG, err.getMessage()));*/
-
-        //Test
-        //StorageReference listRef = storageReference.child("ananas.png");
-        /*listRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                models.add(new Model(uri));
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.e(TAG, e.getMessage());
-            }
-        });*/
 
         //this works but hardcoded
         models.add(new Model(Uri.parse("https://firebasestorage.googleapis.com/v0/b/and1-app.appspot.com/o/images%2F20211129_141447.jpg?alt=media&token=fb3a9d18-4bac-423a-9f00-6e767c39f40b")));
