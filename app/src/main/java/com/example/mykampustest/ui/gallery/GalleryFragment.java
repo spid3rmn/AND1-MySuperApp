@@ -82,9 +82,6 @@ public class GalleryFragment extends Fragment {
         });*/
 
         //this works but hardcoded
-        models.add(new Model(Uri.parse("https://firebasestorage.googleapis.com/v0/b/and1-app.appspot.com/o/images%2F20211129_141418.jpg?alt=media&token=056d8838-dc0f-4d1f-9648-c4b7437274fa")));
-        models.add(new Model(Uri.parse("https://firebasestorage.googleapis.com/v0/b/and1-app.appspot.com/o/images%2F20211129_141428.jpg?alt=media&token=6305c8fb-06b6-40b1-b8bb-04fdd0c7b556")));
-        models.add(new Model(Uri.parse("https://firebasestorage.googleapis.com/v0/b/and1-app.appspot.com/o/images%2F20211129_141436.jpg?alt=media&token=da6b699e-0cae-4b34-bc55-554b76406c8d")));
         models.add(new Model(Uri.parse("https://firebasestorage.googleapis.com/v0/b/and1-app.appspot.com/o/images%2F20211129_141447.jpg?alt=media&token=fb3a9d18-4bac-423a-9f00-6e767c39f40b")));
         models.add(new Model(Uri.parse("https://firebasestorage.googleapis.com/v0/b/and1-app.appspot.com/o/images%2F20211129_141511.jpg?alt=media&token=922a1f0d-06b6-46ec-9696-ee84941b29a9")));
         models.add(new Model(Uri.parse("https://firebasestorage.googleapis.com/v0/b/and1-app.appspot.com/o/images%2F20211129_141513.jpg?alt=media&token=088bb0fa-e4d6-419b-81ad-f29a027bd4bb")));
@@ -97,6 +94,9 @@ public class GalleryFragment extends Fragment {
         models.add(new Model(Uri.parse("https://firebasestorage.googleapis.com/v0/b/and1-app.appspot.com/o/images%2F11081436_345424022324408_5979515502950890736_n.jpg?alt=media&token=1d92658c-392e-4ff7-875e-8c7e658652f8")));
         models.add(new Model(Uri.parse("https://firebasestorage.googleapis.com/v0/b/and1-app.appspot.com/o/images%2F11058414_345424042324406_250201756802854378_n.jpg?alt=media&token=5310fb5b-7e25-4bfa-be80-329f8a99ed59")));
         models.add(new Model(Uri.parse("https://firebasestorage.googleapis.com/v0/b/and1-app.appspot.com/o/images%2F10408536_345424118991065_1098307381691501929_n.jpg?alt=media&token=121cfc70-b880-47d2-8659-6815234c7d85")));
+        models.add(new Model(Uri.parse("https://firebasestorage.googleapis.com/v0/b/and1-app.appspot.com/o/20211129_141532.jpg?alt=media&token=b849ce06-5de8-45e9-8e62-90dc149ebde0")));
+        models.add(new Model(Uri.parse("https://firebasestorage.googleapis.com/v0/b/and1-app.appspot.com/o/20211129_141400.jpg?alt=media&token=9df8868a-e861-4e22-9914-eba0e72e9c63")));
+        models.add(new Model(Uri.parse("https://firebasestorage.googleapis.com/v0/b/and1-app.appspot.com/o/10689638_744648462256914_1654727834020083014_n-400x400.jpg?alt=media&token=5b80ca8e-40d2-4c94-bfc9-7cbeda0de54c")));
 
         modelsList = binding.rvGallery;
         modelsList.hasFixedSize();

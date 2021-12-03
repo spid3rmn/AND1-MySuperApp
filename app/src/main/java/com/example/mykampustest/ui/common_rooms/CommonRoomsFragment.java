@@ -8,11 +8,14 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+
 import com.example.mykampustest.R;
 import com.example.mykampustest.databinding.FragmentOfficeHoursBinding;
 import java.util.ArrayList;
 
 public class CommonRoomsFragment extends Fragment {
+    private static final int SPAN_COUNT = 2;
     private FragmentOfficeHoursBinding binding;
     RecyclerView itemList;
     ItemAdapter itemAdapter;
@@ -31,6 +34,9 @@ public class CommonRoomsFragment extends Fragment {
 
         itemAdapter = new ItemAdapter(rooms);
         itemList.setAdapter(itemAdapter);
+
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(SPAN_COUNT, RecyclerView.VERTICAL);
+        itemList.setLayoutManager(layoutManager);
 
         return root;
     }
