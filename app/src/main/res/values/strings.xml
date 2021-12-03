@@ -92,4 +92,12 @@ the checkout.
 When planning your trip back home please note that checkout is only done on weekdays and only
 in normal business hours. Please schedule travel accordingly. </string>
 
+    <string name="bikes">Parking of bicycles are only allowed in designated areas or storage rooms. Bicycles are not allowed
+inside the apartments. All bicycles must be sticker with your room number. This sticker can be
+collected at the office. </string>
+
+    <string name="smoking">Drosselbo has a non-smoking policy inside all buildings, the policy includes tenants as well as
+visitors. Any tenant violating the nonsmoking policy will be liable to pay damages including a total
+repaint of discolored walls.</string>
+
 </resources>

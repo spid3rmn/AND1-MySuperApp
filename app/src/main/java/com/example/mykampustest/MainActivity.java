@@ -22,13 +22,13 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.mykampustest.databinding.ActivityMainBinding;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private MainActivityViewModel viewModel;
-    private static final String CONTACT_MAIL = "contact@kamtjatka.dk";
     private static final String WEBSITE = "https://kamtjatka.dk/";
     private static final String FACEBOOK = "https://www.facebook.com/kamtjatkahorsens";
     private static final String TAG = "MainActivity";
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             NotificationManager notificationManager =
                     getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(new NotificationChannel(channelId,
-                    channelName, NotificationManager.IMPORTANCE_LOW));
+                    channelName, NotificationManager.IMPORTANCE_HIGH));
         }
 
         //Cloud Messaging: retrieve token for individual messaging
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     public void emailToStaff(View v) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_EMAIL, CONTACT_MAIL);
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"contact@kamtjatka.dk"});
         intent.putExtra(Intent.EXTRA_SUBJECT, SUBJECT);
 
         //Adding name of the sender if logged in

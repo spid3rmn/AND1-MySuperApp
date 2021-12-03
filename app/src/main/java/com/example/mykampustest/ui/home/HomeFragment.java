@@ -53,6 +53,8 @@ public class HomeFragment extends Fragment {
         guides.add(new Guide("Maintenance", "How to request intervents", R.string.maintenance, R.drawable.maintenance_p));
         guides.add(new Guide("Keys", "Don't loose them", R.string.keys, R.drawable.keys_p));
         guides.add(new Guide("Checking out", "Information before leaving", R.string.check_out, R.drawable.check_out_p));
+        guides.add(new Guide("Bicycles", "Parking and usage", R.string.bikes, R.drawable.bikes));
+        guides.add(new Guide("Smoking", "Non-Smoking policy", R.string.smoking, R.drawable.smoking));
 
         return guides;
     }
